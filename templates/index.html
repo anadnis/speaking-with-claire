@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking Exam Practice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;600&family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        
+        
+        <div id="welcome-section" class="welcome-section">
+            <div class="welcome-top">
+                <div class="welcome-header">
+                    <h1>Speaking with Claire</h1>
+                    <div class="subtitle">Speaking Exams Practice</div>
+                </div>
+                <div class="claire-image">
+                    <img src="{{ url_for('static', filename='images/Claire2.jpeg') }}" alt="Claire" class="claire-picture">
+                </div>
+            </div>
+            <p class="exam-text">Start your exam with real timing:</p>
+            <div class="exam-buttons">
+                <button id="startB2Exam" class="btn btn-primary">B2 First</button>
+                <button id="startC1Exam" class="btn btn-primary">C1 Advanced</button>
+            </div>
+            <div class="fun-tagline">Preparing for your exam has never been this fun! 💪</div>
+        </div>
+
+        <div id="exam-section" class="exam-section" style="display: none;">
+            <div id="instructions" class="instructions" style="display: none;"></div>
+            <button id="showText" class="btn">Show Text</button>
+            
+            <div id="characterContainer" class="character-container">
+                <img src="/static/images/character_closed.png" alt="Character" class="character-image closed">
+                <img src="/static/images/character_semi.png" alt="Character" class="character-image semi">
+                <img src="/static/images/character_open.png" alt="Character" class="character-image open">
+            </div>
+            
+            <div class="timer-section">
+                <div id="timer">00:00</div>
+                <div class="timer-controls">
+                    <button id="startTimer" class="btn btn-small">Start Timer</button>
+                    <button id="stopTimer" class="btn btn-small">Stop Timer</button>
+                    <button id="resetTimer" class="btn btn-small">Reset Timer</button>
+                    <button id="nextQuestion" class="btn">Next Question</button>
+                    <button id="finishExam" class="btn btn-danger">Finish Exam</button>
+                </div>
+            </div>
+            <div id="imageContainer" class="image-container" style="display: none;">
+                <div class="image-grid">
+                    <img src="/static/images/im1.png" alt="Photo 1" class="exam-image">
+                    <img src="/static/images/im2.png" alt="Photo 2" class="exam-image">
+                    <img src="/static/images/im3.png" alt="Photo 3" class="exam-image">
+                </div>
+            </div>
+            <div id="imageContainer2" class="image-container" style="display: none;">
+                <div class="image-grid">
+                    <img src="/static/images/im4.png" alt="Photo 4" class="exam-image">
+                    <img src="/static/images/im5.png" alt="Photo 5" class="exam-image">
+                    <img src="/static/images/im6.png" alt="Photo 6" class="exam-image">
+                </div>
+            </div>
+            <div id="imageContainer3" class="image-container" style="display: none;">
+                <div class="image-grid">
+                    <img src="/static/images/im7.png" alt="Photo 7" class="exam-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="part-indicator">
+                <span id="currentPart">1</span>/18
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
